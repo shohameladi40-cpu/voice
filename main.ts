@@ -1,15 +1,11 @@
+let temp: number;
 while (true) {
-    if (pins.digitalReadPin(2)) {
-        basic.showLeds(`
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-            # # # # #
-        `)
-        pause(500)
+    temp = input.temperature()
+    if (temp >= 30) {
+        basic.showString("HOT")
     } else {
         basic.clearScreen()
     }
     
+    pause(500)
 }
